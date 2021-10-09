@@ -11,10 +11,13 @@
         <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
         <property name="show_sql">true</property>
-<!--        <mapping class="com.company.entity.TypeOfSport"/>-->
-<!--        <mapping class="com.company.entity.Countries"/>-->
-<!--        <mapping class="com.company.entity.Championship"/>-->
-<!--        <mapping class="com.company.entity.Teams"/>-->
-<!--        <mapping class="com.company.entity.ChampionshipTeam"/>-->
+        <mapping class="kg.academy.entity.Local"/>
+        <mapping class="kg.academy.entity.Product"/>
+        <mapping class="kg.academy.entity.ProductStore"/>
+        <mapping class="kg.academy.entity.Reserve"/>
+        <mapping class="kg.academy.entity.ReserveStore"/>
+        <mapping class="kg.academy.entity.User"/>
+        <mapping class="kg.academy.entity.UserStore"/>
+
     </session-factory>
 </hibernate-configuration>

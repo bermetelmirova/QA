@@ -28,4 +28,8 @@ public class Reserve {
     @JoinColumn(name= "product_id", nullable = false)
     private Product product;
 
+    public Reserve(User user, Product product){
+        this.user = user;
+        this.product = product;
+    }
 }

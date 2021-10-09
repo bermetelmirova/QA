@@ -29,6 +29,15 @@ public class Local {
     @OneToOne
     @JoinColumn(name = "user_store_id")
     private UserStore userStore;
+
+    public void reserve(Long idUser, Long idProduct){
+        Reserve reserve = hibernateSession
+                .createQuery("select r FROM Reserve r where r.product.id =:idP and r.user.id=:idU", Reserve.class)
+                .setParameter("idP", idProduct)
+                .setParameter("idU", idUser)
+                .uniqueResult();
+        System.out.println(reserve);
+    }
     private static final Session hibernateSession =
             HibernateUtil.getSessionFactory().openSession();
     public  List<Local> read() {

@@ -1,6 +1,8 @@
 package kg.academy.entity;
 
+import kg.academy.util.HibernateUtil;
 import lombok.*;
+import org.hibernate.Session;
 
 import javax.persistence.*;
 
@@ -18,4 +20,5 @@ public class Product {
     private Long id;
     @Column(nullable = false)
     private String name;
+
 }

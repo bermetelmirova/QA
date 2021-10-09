@@ -1,5 +1,7 @@
 package kg.academy.entity;
+import kg.academy.util.HibernateUtil;
 import lombok.*;
+import org.hibernate.Session;
 
 import javax.persistence.*;
 
@@ -19,5 +21,15 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "local_id")
     private Local local;
+
+    public Long create(User user) {
+        Session hibernateSession = HibernateUtil.getSessionFactory().openSession();
+        hibernateSession.beginTransaction();
+        hibernateSession.save(user);
+        hibernateSession.getTransaction().commit();
+        hibernateSession.close();
+        System.out.println("Успешно создан: " + user.toString());
+        return user.getId();
+    }
 }
 
